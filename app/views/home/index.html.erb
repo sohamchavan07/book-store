@@ -1,0 +1,189 @@
+<!-- Hero Section with Animated Background -->
+<div class="relative min-h-[600px] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <!-- Animated background elements with morphing effects -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animate-morph"></div>
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20">
+      <!-- Left Content -->
+      <div class="space-y-8 animate-fade-in-up">
+        <div class="space-y-4">
+          <div class="inline-block">
+            <span class="bg-purple-500/20 text-purple-200 text-xs font-semibold px-4 py-2 rounded-full backdrop-blur-sm border border-purple-400/20 animate-pulse">
+              ✨ Premium Book Collection
+            </span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
+            Discover Your Next
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 animate-gradient-shift">
+              Great Read
+            </span>
+          </h1>
+          
+          <p class="text-xl text-slate-300 leading-relaxed">
+            Explore thousands of books from diverse genres. Build your personal library, manage collections, and connect with fellow readers worldwide.
+          </p>
+        </div>
+
+        <!-- CTA Buttons with enhanced hover effects -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <%= link_to "Browse Books", books_path, class: "group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl overflow-hidden shadow-lg hover:shadow-purple-500/50 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up-delay-1 btn-hover-lift" %>
+          
+          <%= link_to "Add New Book", new_book_path, class: "group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/50 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up-delay-2 btn-hover-lift" %>
+        </div>
+
+        <!-- Stats with counter animations -->
+        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-700/50">
+          <div class="text-center animate-fade-in-up-delay-3 scroll-animate">
+            <div class="text-3xl font-bold text-purple-400 counter" data-target="1000">0</div>
+            <div class="text-sm text-slate-400 mt-1">Books Available</div>
+          </div>
+          <div class="text-center animate-fade-in-up-delay-4 scroll-animate">
+            <div class="text-3xl font-bold text-purple-400 counter" data-target="500">0</div>
+            <div class="text-sm text-slate-400 mt-1">Happy Readers</div>
+          </div>
+          <div class="text-center animate-fade-in-up-delay-5 scroll-animate">
+            <div class="text-3xl font-bold text-purple-400 counter" data-target="50">0</div>
+            <div class="text-sm text-slate-400 mt-1">Categories</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Animated Book Display with enhanced effects -->
+      <div class="hidden md:flex items-center justify-center animate-float" data-parallax>
+        <div class="relative w-full max-w-sm">
+          <!-- Glow effect with pulse -->
+          <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-3xl opacity-30 animate-glow-pulse"></div>
+          
+          <!-- Book cards stack with flip effects -->
+          <div class="relative space-y-6">
+            <div class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl p-8 shadow-2xl transform -rotate-6 hover:rotate-0 transition-all duration-500 hover:shadow-purple-500/50 card-premium animate-flip">
+              <div class="text-white space-y-4">
+                <div class="text-5xl">📕</div>
+                <h3 class="text-2xl font-bold">Featured</h3>
+                <p class="text-purple-100">Premium collection</p>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 hover:shadow-blue-500/50 card-premium animate-flip" style="animation-delay: 200ms;">
+              <div class="text-white space-y-4">
+                <div class="text-5xl">📗</div>
+                <h3 class="text-2xl font-bold">Curated</h3>
+                <p class="text-blue-100">Hand-picked titles</p>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-8 shadow-2xl transform -rotate-3 hover:rotate-0 transition-all duration-500 hover:shadow-pink-500/50 card-premium animate-flip" style="animation-delay: 400ms;">
+              <div class="text-white space-y-4">
+                <div class="text-5xl">📘</div>
+                <h3 class="text-2xl font-bold">Explore</h3>
+                <p class="text-pink-100">New arrivals</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section with stagger animations -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-animate" data-stagger-container>
+  <div class="text-center mb-16 animate-fade-in-up">
+    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Why Choose BookStore?</h2>
+    <p class="text-xl text-slate-600">Experience the perfect platform for book lovers</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Feature 1 -->
+    <div class="group relative animate-fade-in-up-delay-1 stagger-item card-premium overlay-gradient">
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">🎯</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Easy Discovery</h3>
+        <p class="text-slate-600">Find books by genre, author, or trending topics with our intuitive search and discovery tools.</p>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="group relative animate-fade-in-up-delay-2 stagger-item card-premium overlay-gradient">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">📚</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Smart Collections</h3>
+        <p class="text-slate-600">Organize your library with custom collections, wishlist, and reading progress tracking.</p>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="group relative animate-fade-in-up-delay-3 stagger-item card-premium overlay-gradient">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 to-pink-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <div class="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">🚀</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Fast & Reliable</h3>
+        <p class="text-slate-600">Lightning-fast performance powered by modern infrastructure and proven technology.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin & Tools Section -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-animate">
+  <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative card-premium">
+    <!-- Decorative elements with animation -->
+    <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1s;"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+    
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="animate-fade-in-up">
+        <h3 class="text-3xl font-bold text-white mb-4">Admin Tools & API</h3>
+        <p class="text-slate-300 mb-6">Access powerful administration tools and RESTful API for seamless integration with your applications.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <%= link_to "API Documentation", api_v1_books_path, class: "inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-purple-500/50 btn-hover-lift" %>
+          <%= link_to "Sidekiq Dashboard", "/sidekiq", class: "inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/50 btn-hover-lift" %>
+        </div>
+      </div>
+
+      <div class="hidden md:block scroll-animate">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-lg"></div>
+          <div class="relative bg-slate-800/50 backdrop-blur rounded-xl p-6 border border-slate-700/50 card-premium">
+            <div class="space-y-4 text-sm text-slate-400 font-mono">
+              <div class="flex items-center gap-2 stagger-item animate-fade-in-up">
+                <span class="text-purple-400">&gt;</span>
+                <span>GET /api/v1/books</span>
+              </div>
+              <div class="flex items-center gap-2 stagger-item animate-fade-in-up" style="animation-delay: 100ms;">
+                <span class="text-purple-400">&gt;</span>
+                <span>POST /api/v1/books</span>
+              </div>
+              <div class="flex items-center gap-2 stagger-item animate-fade-in-up" style="animation-delay: 200ms;">
+                <span class="text-purple-400">&gt;</span>
+                <span>PATCH /api/v1/books/:id</span>
+              </div>
+              <div class="flex items-center gap-2 stagger-item animate-fade-in-up" style="animation-delay: 300ms;">
+                <span class="text-purple-400">&gt;</span>
+                <span>DELETE /api/v1/books/:id</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section with entrance animation -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center scroll-animate">
+  <div class="animate-fade-in-up">
+    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Ready to Start Reading?</h2>
+    <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Join thousands of book lovers and discover your next favorite read today.</p>
+    <%= link_to "Explore Our Collection", books_path, class: "group relative inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-purple-500/50 btn-hover-lift card-premium" %>
+  </div>
+</div>
