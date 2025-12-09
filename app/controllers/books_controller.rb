@@ -1,14 +1,19 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
   def index
-    @books = Book.all
+    @books = if params[:search].present?
+      Book.where("title ILIKE ? OR author ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      Book.all
+    end.order(created_at: :desc)
   end
 
   # GET /books/1
-  def show
-  end
+  def show; end
 
   # GET /books/new
   def new
@@ -16,8 +21,7 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /books
   def create

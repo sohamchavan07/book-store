@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WelcomeEmailJob < ApplicationJob
   queue_as :default
 
@@ -14,7 +16,7 @@ class WelcomeEmailJob < ApplicationJob
       executed_at: Time.current,
       message: "Welcome email sent to #{user.email}"
     )
-  rescue => e
+  rescue StandardError => e
     JobLog.create!(
       job_name: self.class.name,
       status: 'failed',

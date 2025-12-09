@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  get "home/index"
+  get 'home/index'
   devise_for :users
   # Web UI routes
   resources :books
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   # API routes
   namespace :api do
     namespace :v1 do
-      resources :books, only: [:index, :show, :create]
+      resources :books, only: %i[index show create]
     end
   end
 

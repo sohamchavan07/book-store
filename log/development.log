@@ -8172,3 +8172,1223 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 51ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
 
 
+Started GET "/" for ::1 at 2025-12-09 15:26:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookStore'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | GC: 0.0ms)
+Completed 200 OK in 80ms (Views: 24.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-12-09 15:26:17 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users/sign_in" for ::1 at 2025-12-09 15:26:22 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 89ms (Views: 10.4ms | ActiveRecord: 4.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-12-09 15:26:39 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'soham@gmail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='sessions'*/[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 409ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:26:40 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookStore',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 6.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:27:53 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 56.5ms | GC: 1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | GC: 1.6ms)
+Completed 200 OK in 100ms (Views: 60.9ms | ActiveRecord: 3.1ms (3 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/books/new" for ::1 at 2025-12-09 15:27:56 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 13.8ms | GC: 0.5ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 15.9ms | GC: 0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | GC: 0.5ms)
+Completed 200 OK in 48ms (Views: 22.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:03 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>""}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c88b9ca00>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>""}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 7.8ms | GC: 0.7ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.6ms | GC: 0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 0.7ms)
+Completed 422 Unprocessable Content in 66ms (Views: 16.4ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 2.4ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:13 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c88bb4100>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 5.6ms | GC: 0.3ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.3ms)
+Completed 422 Unprocessable Content in 42ms (Views: 11.8ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:18 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c8b078400>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 48ms (Views: 16.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:20 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c8a0bfd38>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 9.5ms | GC: 0.6ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 10.4ms | GC: 0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 0.6ms)
+Completed 422 Unprocessable Content in 83ms (Views: 17.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 2.6ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:24 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c8a9a0d30>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"", "published_on"=>"2025-12-12"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 45ms (Views: 12.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/book" for ::1 at 2025-12-09 15:28:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/book"):
+  
+Started GET "/books" for ::1 at 2025-12-09 15:28:32 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 9.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 16.9ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books/4" for ::1 at 2025-12-09 15:28:38 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 4 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 0.2ms)
+Completed 200 OK in 43ms (Views: 13.8ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:28:42 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 9.4ms | GC: 0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | GC: 0.2ms)
+Completed 200 OK in 76ms (Views: 15.9ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/books/new" for ::1 at 2025-12-09 15:28:45 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 7.8ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.2ms)
+Completed 200 OK in 40ms (Views: 12.5ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:28:57 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"1", "published_on"=>"2025-12-13"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f3c8a0b2c78>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martin", "price"=>"799.0", "category_id"=>"1", "published_on"=>"2025-12-13"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "price", "published_on", "created_at", "updated_at", "category_id") VALUES ('Clean Code', 'Robert C. Martin', 799.0, NULL, '2025-12-09 09:58:57.889383', '2025-12-09 09:58:57.889383', 1) RETURNING "id" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://[::1]:3000/books/5
+Completed 302 Found in 44ms (ActiveRecord: 9.6ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/books/5" for ::1 at 2025-12-09 15:28:57 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 5 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 9.0ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books/5" for ::1 at 2025-12-09 15:29:02 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 5 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 67ms (Views: 10.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:29:09 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookStore',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:33
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 4.4ms)
+Completed 200 OK in 35ms (Views: 11.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/api/v1/books" for ::1 at 2025-12-09 15:29:14 +0530
+Processing by Api::V1::BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/api/v1/books_controller.rb:9:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/serializers/book_serializer.rb:8:in `block in <class:BookSerializer>'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/serializers/book_serializer.rb:8:in `block in <class:BookSerializer>'
+Completed 200 OK in 35ms (Views: 1.0ms | ActiveRecord: 0.5ms (3 queries, 1 cached) | GC: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-12-09 15:30:56 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='BookStore',controller='sessions'*/[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 45ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:30:56 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:30:58 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:34:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookStore'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | GC: 0.0ms)
+Completed 200 OK in 97ms (Views: 34.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-12-09 15:34:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/books" for ::1 at 2025-12-09 15:34:35 +0530
+Processing by Api::V1::BooksController#index as HTML
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/api/v1/books_controller.rb:9:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/serializers/book_serializer.rb:8:in `block in <class:BookSerializer>'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/serializers/book_serializer.rb:8:in `block in <class:BookSerializer>'
+Completed 200 OK in 102ms (Views: 0.7ms | ActiveRecord: 4.8ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:34:39 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 35.6ms | GC: 13.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | GC: 13.1ms)
+Completed 200 OK in 112ms (Views: 42.9ms | ActiveRecord: 0.7ms (3 queries, 1 cached) | GC: 13.1ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:34:45 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:36:11 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 11.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:36:12 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-12-09 15:36:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:36:17 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.3ms)
+Completed 200 OK in 59ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:36:17 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:36:22 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:36:30 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 14.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:36:31 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:38:45 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.4ms)
+Completed 200 OK in 35ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:38:45 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/books" for ::1 at 2025-12-09 15:38:48 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.9ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 59.9ms | GC: 8.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | GC: 11.3ms)
+Completed 200 OK in 134ms (Views: 64.9ms | ActiveRecord: 5.1ms (3 queries, 1 cached) | GC: 11.3ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:38:48 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:38:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:38:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:39:13 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/books" for ::1 at 2025-12-09 15:39:14 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 33.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.2ms | GC: 0.0ms)
+Completed 200 OK in 105ms (Views: 45.7ms | ActiveRecord: 0.5ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:19 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:19 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:39:28 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/books" for ::1 at 2025-12-09 15:39:29 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 16.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | GC: 0.4ms)
+Completed 200 OK in 78ms (Views: 20.6ms | ActiveRecord: 0.5ms (3 queries, 1 cached) | GC: 0.4ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:29 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/books/new" for ::1 at 2025-12-09 15:39:32 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 37.0ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 39.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | GC: 0.0ms)
+Completed 200 OK in 93ms (Views: 42.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/books" for ::1 at 2025-12-09 15:39:47 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martinwef", "price"=>"799.0", "category_id"=>"2", "published_on"=>"2025-12-16"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f5a5e2864b8>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Clean Code", "author"=>"Robert C. Martinwef", "price"=>"799.0", "category_id"=>"2", "published_on"=>"2025-12-16"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "price", "published_on", "created_at", "updated_at", "category_id") VALUES ('Clean Code', 'Robert C. Martinwef', 799.0, NULL, '2025-12-09 10:09:47.519111', '2025-12-09 10:09:47.519111', 2) RETURNING "id" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:25:in `create'
+Redirected to http://[::1]:3000/books/6
+Completed 302 Found in 57ms (ActiveRecord: 8.8ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/books/6" for ::1 at 2025-12-09 15:39:47 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 6 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.2ms)
+Completed 200 OK in 42ms (Views: 8.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:47 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:39:54 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:39:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:40:02 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 9.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:40:02 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:40:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookStore'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 90ms (Views: 25.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:40:50 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for ::1 at 2025-12-09 15:43:17 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 17.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-12-09 15:43:18 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/books" for ::1 at 2025-12-09 15:43:33 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (14.0ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 124.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 128.1ms | GC: 0.0ms)
+Completed 200 OK in 208ms (Views: 104.1ms | ActiveRecord: 25.1ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:44:12 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (5.8ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 65.3ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | GC: 1.9ms)
+Completed 200 OK in 114ms (Views: 70.4ms | ActiveRecord: 8.8ms (4 queries, 1 cached) | GC: 2.2ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:44:17 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 55.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.9ms | GC: 0.0ms)
+Completed 200 OK in 99ms (Views: 59.4ms | ActiveRecord: 5.9ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/books/2" for ::1 at 2025-12-09 15:45:46 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 2 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.2ms)
+Completed 200 OK in 62ms (Views: 12.6ms | ActiveRecord: 4.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:46:00 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 40.3ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | GC: 1.0ms)
+Completed 200 OK in 76ms (Views: 43.1ms | ActiveRecord: 1.3ms (4 queries, 1 cached) | GC: 1.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:47:04 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 11.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:47:08 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:7
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:7
+  Rendered books/index.html.erb within layouts/application (Duration: 63.1ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | GC: 2.8ms)
+Completed 200 OK in 105ms (Views: 70.7ms | ActiveRecord: 4.9ms (4 queries, 1 cached) | GC: 2.8ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:49:46 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 55.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.8ms | GC: 0.0ms)
+Completed 200 OK in 96ms (Views: 59.8ms | ActiveRecord: 6.6ms (6 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/books/1" for ::1 at 2025-12-09 15:49:50 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 1 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:50:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 7.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 6.7ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:50:50 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 63.0ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 69.0ms | GC: 1.5ms)
+Completed 200 OK in 106ms (Views: 68.1ms | ActiveRecord: 7.3ms (6 queries, 1 cached) | GC: 1.8ms)
+
+
+Started GET "/books/new" for ::1 at 2025-12-09 15:50:55 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 16.7ms | GC: 0.4ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 19.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | GC: 0.4ms)
+Completed 200 OK in 61ms (Views: 25.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:51:02 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 34.6ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | GC: 0.6ms)
+Completed 200 OK in 70ms (Views: 39.0ms | ActiveRecord: 1.5ms (6 queries, 1 cached) | GC: 0.6ms)
+
+
+Started GET "/books?search=Florenti" for ::1 at 2025-12-09 15:51:11 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>"Florenti"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  Rendered books/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+Caused by: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+Caused by: SQLite3::SQLException (near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+
+Information for: ActionView::Template::Error (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+     6:       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+     7:         All Books
+     8:         <span class="block text-2xl font-normal text-purple-300 mt-2">
+     9:           <%= pluralize(@books.count, "book") %> in your collection
+    10:         </span>
+    11:       </h1>
+    12:       
+  
+
+Information for cause: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+  
+
+Information for cause: SQLite3::SQLException (near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+  
+app/views/books/index.html.erb:9
+Started GET "/books?search=Florenti" for ::1 at 2025-12-09 15:51:18 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>"Florenti"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  Rendered books/index.html.erb within layouts/application (Duration: 9.5ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 1.1ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+Caused by: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+Caused by: SQLite3::SQLException (near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^)
+
+Information for: ActionView::Template::Error (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+     6:       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+     7:         All Books
+     8:         <span class="block text-2xl font-normal text-purple-300 mt-2">
+     9:           <%= pluralize(@books.count, "book") %> in your collection
+    10:         </span>
+    11:       </h1>
+    12:       
+  
+
+Information for cause: ActiveRecord::StatementInvalid (SQLite3::SQLException: near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+  
+
+Information for cause: SQLite3::SQLException (near "ILIKE": syntax error:
+SELECT COUNT(*) FROM "books" WHERE (title ILIKE '%Florenti%' OR author ILIKE '%Florenti%') /*action='index',application='BookStore',controller='books'*/
+                                          ^):
+  
+app/views/books/index.html.erb:9
+Started GET "/books/6" for ::1 at 2025-12-09 15:51:24 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 6 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:54:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.4ms)
+Completed 200 OK in 46ms (Views: 11.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/books/6" for ::1 at 2025-12-09 15:51:30 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 6 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:54:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 9.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | GC: 0.4ms)
+Completed 200 OK in 47ms (Views: 18.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/books/6" for ::1 at 2025-12-09 15:51:36 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 6 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:54:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.2ms)
+Completed 200 OK in 55ms (Views: 8.8ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/books/new" for ::1 at 2025-12-09 15:51:50 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 6.8ms | GC: 0.3ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.3ms)
+Completed 200 OK in 46ms (Views: 14.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/books" for ::1 at 2025-12-09 15:52:21 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"soham chavan", "author"=>"me", "price"=>"150", "category_id"=>"3", "published_on"=>"2025-12-31"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :published_on. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f0260056720>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"soham chavan", "author"=>"me", "price"=>"150", "category_id"=>"3", "published_on"=>"2025-12-31"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:29:in `create'
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:29:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "price", "published_on", "created_at", "updated_at", "category_id") VALUES ('soham chavan', 'me', 150.0, NULL, '2025-12-09 10:22:21.580279', '2025-12-09 10:22:21.580279', 3) RETURNING "id" /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:29:in `create'
+Redirected to http://[::1]:3000/books/7
+Completed 302 Found in 65ms (ActiveRecord: 10.7ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/books/7" for ::1 at 2025-12-09 15:52:21 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 7 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:54:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.5ms)
+Completed 200 OK in 43ms (Views: 9.8ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:52:24 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books/new" for ::1 at 2025-12-09 15:52:27 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (Duration: 9.2ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 14.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:52:32 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 34.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | GC: 0.0ms)
+Completed 200 OK in 76ms (Views: 37.4ms | ActiveRecord: 1.5ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 15:53:23 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"books", :id=>nil}, missing required keys: [:id])
+Caused by: ActionController::UrlGenerationError (No route matches {:action=>"edit", :controller=>"books", :id=>nil}, missing required keys: [:id])
+
+Information for: ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"books", :id=>nil}, missing required keys: [:id]):
+    11:       <% end %>
+    12: 
+    13:       <div class="flex gap-3">
+    14:         <%= link_to "Edit Book", edit_book_path(@book), 
+    15:             class: "px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium rounded-xl shadow-lg hover:shadow-purple-500/50 transform hover:-translate-y-0.5 transition" %>
+    16: 
+    17:         <%= link_to "Delete", book_path(@book), 
+  
+app/views/books/index.html.erb:14
+
+Information for cause: ActionController::UrlGenerationError (No route matches {:action=>"edit", :controller=>"books", :id=>nil}, missing required keys: [:id]):
+  
+app/views/books/index.html.erb:14
+Started GET "/books" for ::1 at 2025-12-09 15:53:41 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 80.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 89.1ms | GC: 0.0ms)
+Completed 200 OK in 131ms (Views: 87.4ms | ActiveRecord: 7.1ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-12-09 15:54:03 +0530
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2025-12-09 16:00:08 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:19
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:43
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:45
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:59
+  Rendered books/index.html.erb within layouts/application (Duration: 62.2ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 70.1ms | GC: 2.8ms)
+Completed 200 OK in 124ms (Views: 70.4ms | ActiveRecord: 2.8ms (7 queries, 1 cached) | GC: 3.4ms)
+
+
+Started GET "/books?search=" for ::1 at 2025-12-09 16:00:21 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:19
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:43
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:45
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:59
+  Rendered books/index.html.erb within layouts/application (Duration: 41.5ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | GC: 1.1ms)
+Completed 200 OK in 80ms (Views: 48.0ms | ActiveRecord: 1.8ms (7 queries, 1 cached) | GC: 1.1ms)
+
+
+Started GET "/books/7" for ::1 at 2025-12-09 16:00:25 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = 7 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/controllers/books_controller.rb:54:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/show.html.erb:14
+  Rendered books/show.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 18.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/books?search=" for ::1 at 2025-12-09 16:00:37 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:19
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:43
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:45
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:59
+  Rendered books/index.html.erb within layouts/application (Duration: 75.8ms | GC: 10.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 81.3ms | GC: 10.8ms)
+Completed 200 OK in 117ms (Views: 82.4ms | ActiveRecord: 5.5ms (7 queries, 1 cached) | GC: 10.8ms)
+
+
+Started GET "/books?search=" for ::1 at 2025-12-09 16:00:54 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:19
+  [1m[36mBook Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:43
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:45
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:59
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:59
+  Rendered books/index.html.erb within layouts/application (Duration: 63.3ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 68.6ms | GC: 0.8ms)
+Completed 200 OK in 119ms (Views: 67.8ms | ActiveRecord: 2.4ms (7 queries, 1 cached) | GC: 0.8ms)
+
+
+Started GET "/books?search=" for ::1 at 2025-12-09 16:01:06 +0530
+Processing by BooksController#index as HTML
+  Parameters: {"search"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books" /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:9
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:31
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."created_at" DESC /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='index',application='BookStore',controller='books'*/[0m
+  ↳ app/views/books/index.html.erb:41
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  ↳ app/views/books/index.html.erb:41
+  Rendered books/index.html.erb within layouts/application (Duration: 59.5ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | GC: 1.4ms)
+Completed 200 OK in 111ms (Views: 67.0ms | ActiveRecord: 5.8ms (7 queries, 1 cached) | GC: 1.9ms)
+
+
