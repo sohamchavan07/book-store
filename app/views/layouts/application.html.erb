@@ -32,7 +32,7 @@
           <div class="flex items-center gap-4">
             <% if user_signed_in? %>
               <span class="text-sm text-slate-500 hidden sm:block animate-fade-in">Welcome, <span class="font-semibold text-slate-700 text-gradient-animated"><%= current_user.email %></span></span>
-              <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-sm font-medium text-slate-600 hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50 nav-link-animated smooth-transition" %>
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, form: { class: 'inline' }, class: "text-sm font-medium text-slate-600 hover:text-red-600 transition-colors px-3 py-2 rounded-lg hover:bg-red-50 nav-link-animated smooth-transition" %>
             <% else %>
               <%= link_to 'Login', new_user_session_path, class: "text-sm font-medium text-slate-600 hover:text-indigo-600 px-3 py-2 transition-colors nav-link-animated" %>
               <%= link_to 'Sign up', new_user_registration_path, class: "text-sm font-medium bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 btn-hover-lift interactive-element" %>
