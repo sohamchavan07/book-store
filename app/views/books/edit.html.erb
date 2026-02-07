@@ -1,12 +1,19 @@
-<% content_for :title, "Editing book" %>
+<div class="books-page-container">
+  <div class="page-content" style="max-width: 800px;">
+    
+    <div class="auth-card" style="max-width: 100%; padding: 3rem;">
+      <div class="auth-header" style="text-align: left; margin-bottom: 2.5rem;">
+        <h1 class="main-title" style="font-size: 2.5rem;">Edit Book</h1>
+        <p class="subtitle">Making changes to "<%= @book.title %>"</p>
+      </div>
 
-<h1>Editing book</h1>
+      <%= render "form", book: @book %>
+      
+      <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <%= link_to "← Back to Library", books_path, class: "auth-link" %>
+        <%= link_to "View this book", @book, class: "btn-edit", style: "text-decoration: none;" %>
+      </div>
+    </div>
 
-<%= render "form", book: @book %>
-
-<br>
-
-<div>
-  <%= link_to "Show this book", @book %> |
-  <%= link_to "Back to books", books_path %>
+  </div>
 </div>

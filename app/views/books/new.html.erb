@@ -1,11 +1,18 @@
-<% content_for :title, "New book" %>
+<div class="books-page-container">
+  <div class="page-content" style="max-width: 800px;">
+    
+    <div class="auth-card" style="max-width: 100%; padding: 3rem;">
+      <div class="auth-header" style="text-align: left; margin-bottom: 2.5rem;">
+        <h1 class="main-title" style="font-size: 2.5rem;">New Book</h1>
+        <p class="subtitle">Add a new treasure to your collection.</p>
+      </div>
 
-<h1>New book</h1>
+      <%= render "form", book: @book %>
+      
+      <div style="margin-top: 2rem; text-align: center;">
+        <%= link_to "← Cancel", books_path, class: "auth-link" %>
+      </div>
+    </div>
 
-<%= render "form", book: @book %>
-
-<br>
-
-<div>
-  <%= link_to "Back to books", books_path %>
+  </div>
 </div>

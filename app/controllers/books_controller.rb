@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
+  # Require users to be logged in for actions that modify data.
+  # Keep index and show public.
+  before_action :authenticate_user!, except: %i[index show]
+
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
