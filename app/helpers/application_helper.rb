@@ -12,21 +12,28 @@ module ApplicationHelper
     return false if name.blank?
 
     name = name.to_s
+    paths = direct_asset_paths(name)
+    paths += extension_asset_paths(name) if File.extname(name).empty?
 
-    candidates = []
-    # Direct paths provided
-    candidates << Rails.root.join('app', 'assets', 'images', name)
-    candidates << Rails.root.join('app', 'assets', 'builds', name)
-    candidates << Rails.root.join('public', 'assets', name)
+    paths.any? { |p| File.exist?(p) }
+  end
 
-    # If no extension, try common image extensions
-    if File.extname(name).empty?
-      %w[png jpg jpeg svg webp].each do |ext|
-        candidates << Rails.root.join('app', 'assets', 'images', "#{name}.#{ext}")
-        candidates << Rails.root.join('public', 'assets', "#{name}.#{ext}")
-      end
+  private
+
+  def direct_asset_paths(name)
+    [
+      Rails.root.join('app', 'assets', 'images', name),
+      Rails.root.join('app', 'assets', 'builds', name),
+      Rails.root.join('public', 'assets', name)
+    ]
+  end
+
+  def extension_asset_paths(name)
+    %w[png jpg jpeg svg webp].flat_map do |ext|
+      [
+        Rails.root.join('app', 'assets', 'images', "#{name}.#{ext}"),
+        Rails.root.join('public', 'assets', "#{name}.#{ext}")
+      ]
     end
-
-    candidates.any? { |p| File.exist?(p) }
   end
 end

@@ -10,19 +10,20 @@ class WelcomeEmailJob < ApplicationJob
     UserMailer.welcome_email(user).deliver_now
 
     # Store JobLog
-    JobLog.create!(
-      job_name: self.class.name,
-      status: 'success',
-      executed_at: Time.current,
-      message: "Welcome email sent to #{user.email}"
-    )
+    log_job_status('success', "Welcome email sent to #{user.email}")
   rescue StandardError => e
+    log_job_status('failed', e.message)
+    raise e
+  end
+
+  private
+
+  def log_job_status(status, message)
     JobLog.create!(
       job_name: self.class.name,
-      status: 'failed',
+      status: status,
       executed_at: Time.current,
-      message: e.message
+      message: message
     )
-    raise e
   end
 end
