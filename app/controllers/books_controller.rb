@@ -10,10 +10,10 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = if params[:search].present?
-      Book.where("title ILIKE ? OR author ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
-    else
-      Book.all
-    end.order(created_at: :desc)
+               Book.where('title ILIKE ? OR author ILIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+             else
+               Book.all
+             end.order(created_at: :desc)
   end
 
   # GET /books/1
