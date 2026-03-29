@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = if params[:search].present?
-               Book.where('title ILIKE ? OR author ILIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+               Book.where('title LIKE ? OR author LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
              else
                Book.all
              end.order(created_at: :desc)
@@ -59,6 +59,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :price, :category_id)
+    params.require(:book).permit(:title, :author, :price, :category_id, :published_on)
   end
 end

@@ -1,49 +1,46 @@
-<div class="auth-container">
-  <div class="auth-card">
-    <div class="auth-header">
-      <div class="auth-logo">📚</div>
-      <h2 class="auth-title">Join Book Store</h2>
-      <p class="auth-subtitle">Create your personal library today</p>
-    </div>
+<div class="max-w-md mx-auto py-12 px-4 animate-fade-in">
+  <div class="card-premium p-10 lg:p-12 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50">
+    <header class="text-center space-y-4 mb-10">
+      <div class="inline-flex w-16 h-16 bg-slate-900 rounded-2xl items-center justify-center text-3xl shadow-xl shadow-slate-200 mb-2">🖋️</div>
+      <h1 class="text-4xl font-black text-slate-900 tracking-tight">Begin Your <span class="text-gradient-animated">Journey</span></h1>
+      <p class="text-slate-500 font-medium">Create your personal digital library</p>
+    </header>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "auth-form" }) do |f| %>
-      <% if resource.errors.any? %>
-        <div style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(239, 68, 68, 0.2); font-size: 0.9rem;">
-          <ul style="list-style-type: disc; padding-left: 1.25rem; margin: 0;">
-            <% resource.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="form-group">
-        <%= f.label :email, class: "form-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input", placeholder: "you@example.com" %>
+      <div class="space-y-2">
+        <%= f.label :email, class: "text-xs font-black text-slate-400 uppercase tracking-widest ml-1" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+            class: "input-animated block w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-300 font-medium focus:ring-4 focus:ring-violet-500/10",
+            placeholder: "name@example.com" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password, class: "form-label" %>
+      <div class="space-y-2">
+        <%= f.label :password, class: "text-xs font-black text-slate-400 uppercase tracking-widest ml-1" %>
         <% if @minimum_password_length %>
-          <span style="font-size: 0.75rem; color: #94a3b8;">(<%= @minimum_password_length %> chars min)</span>
+          <em class="text-[10px] text-slate-400 font-bold tracking-tight uppercase">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-input", placeholder: "••••••••" %>
+        <%= f.password_field :password, autocomplete: "new-password",
+            class: "input-animated block w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-300 font-medium focus:ring-4 focus:ring-violet-500/10",
+            placeholder: "••••••••" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, class: "form-label" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input", placeholder: "••••••••" %>
+      <div class="space-y-2">
+        <%= f.label :password_confirmation, class: "text-xs font-black text-slate-400 uppercase tracking-widest ml-1" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",
+            class: "input-animated block w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-300 font-medium focus:ring-4 focus:ring-violet-500/10",
+            placeholder: "••••••••" %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up", class: "btn-auth" %>
+      <div class="pt-4">
+        <%= f.submit "Join BookStore", class: "btn-hover-lift w-full py-5 bg-slate-900 text-white font-black text-xl rounded-[2rem] shadow-2xl shadow-slate-200 cursor-pointer" %>
       </div>
     <% end %>
 
-    <div class="auth-footer">
-      <span>Already have an account? <%= link_to "Sign in", new_session_path(resource_name), class: "auth-link" %></span>
-      
-      <%= link_to "← Back to Store", root_path, class: "auth-link", style: "font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;" %>
+    <div class="mt-10 pt-8 border-t border-slate-50 text-center space-y-4">
+      <p class="text-slate-500 text-sm font-medium">Already have an account?</p>
+      <%= link_to "Sign in here", new_session_path(resource_name), class: "inline-block text-violet-600 font-black hover:text-violet-700 transition-colors underline decoration-2 underline-offset-4" %>
     </div>
   </div>
 </div>

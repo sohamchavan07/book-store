@@ -46,15 +46,9 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
-  gem 'devise'
-
-  gem 'fast_jsonapi'
-
   gem 'rspec-rails'
 
   gem 'factory_bot_rails'
-
-  gem 'sidekiq'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
@@ -62,6 +56,10 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'rubocop-rails-omakase', require: false
 end
+
+gem 'devise'
+gem 'fast_jsonapi'
+gem 'sidekiq'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

@@ -1,56 +1,41 @@
-<div class="auth-container">
-  <div class="auth-card">
-    <div class="auth-header">
-      <div class="auth-logo">📚</div>
-      <h2 class="auth-title">Welcome Back</h2>
-      <p class="auth-subtitle">Sign in to your library account</p>
-    </div>
+<div class="max-w-md mx-auto py-12 px-4 animate-fade-in">
+  <div class="card-premium p-10 lg:p-12 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50">
+    <header class="text-center space-y-4 mb-10">
+      <div class="inline-flex w-16 h-16 bg-slate-900 rounded-2xl items-center justify-center text-3xl shadow-xl shadow-slate-200 mb-2">🔑</div>
+      <h1 class="text-4xl font-black text-slate-900 tracking-tight">Welcome <span class="text-gradient-animated">Back</span></h1>
+      <p class="text-slate-500 font-medium">Continue your literary journey</p>
+    </header>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "auth-form" }) do |f| %>
-      <% if flash[:alert] %>
-        <div style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(239, 68, 68, 0.2); font-size: 0.9rem; text-align: center;">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
-
-      <% if flash[:notice] %>
-        <div style="color: #c084fc; background: rgba(124, 58, 237, 0.1); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(124, 58, 237, 0.2); font-size: 0.9rem; text-align: center;">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.label :email, class: "form-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input", placeholder: "you@example.com" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+      <div class="space-y-2">
+        <%= f.label :email, class: "text-xs font-black text-slate-400 uppercase tracking-widest ml-1" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+            class: "input-animated block w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-300 font-medium focus:ring-4 focus:ring-violet-500/10",
+            placeholder: "name@example.com" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password, class: "form-label" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-input", placeholder: "••••••••" %>
+      <div class="space-y-2">
+        <%= f.label :password, class: "text-xs font-black text-slate-400 uppercase tracking-widest ml-1" %>
+        <%= f.password_field :password, autocomplete: "current-password",
+            class: "input-animated block w-full px-6 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-300 font-medium focus:ring-4 focus:ring-violet-500/10",
+            placeholder: "••••••••" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="form-checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        <div class="flex items-center gap-3 px-1">
+          <%= f.check_box :remember_me, class: "w-5 h-5 rounded-lg border-slate-200 text-violet-600 focus:ring-violet-500/20 transition-all" %>
+          <%= f.label :remember_me, class: "text-sm font-bold text-slate-500 cursor-pointer" %>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Sign in", class: "btn-auth" %>
+      <div class="pt-4">
+        <%= f.submit "Sign In", class: "btn-hover-lift w-full py-5 bg-slate-900 text-white font-black text-xl rounded-[2rem] shadow-2xl shadow-slate-200 cursor-pointer" %>
       </div>
     <% end %>
 
-    <div class="auth-footer">
-      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <span>Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name), class: "auth-link" %></span>
-      <% end %>
-
-      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "auth-link", style: "font-size: 0.8rem; opacity: 0.8;" %>
-      <% end %>
-      
-      <%= link_to "← Back to Store", root_path, class: "auth-link", style: "font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;" %>
+    <div class="mt-10 pt-8 border-t border-slate-50 text-center space-y-4">
+      <p class="text-slate-500 text-sm font-medium">New to BookStore?</p>
+      <%= link_to "Create your sanctuary", new_registration_path(resource_name), class: "inline-block text-violet-600 font-black hover:text-violet-700 transition-colors underline decoration-2 underline-offset-4" %>
     </div>
   </div>
 </div>

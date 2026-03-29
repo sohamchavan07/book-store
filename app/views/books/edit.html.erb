@@ -1,19 +1,25 @@
-<div class="books-page-container">
-  <div class="page-content" style="max-width: 800px;">
+<div class="max-w-3xl mx-auto py-12 px-4 animate-fade-in">
+  <!-- Back Button -->
+  <%= link_to @book, class: "inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 font-bold mb-8 transition-colors group" do %>
+    <span class="group-hover:-translate-x-1 transition-transform">←</span>
+    <span>Back to Details</span>
+  <% end %>
+
+  <div class="card-premium p-10 lg:p-16 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50"></div>
     
-    <div class="auth-card" style="max-width: 100%; padding: 3rem;">
-      <div class="auth-header" style="text-align: left; margin-bottom: 2.5rem;">
-        <h1 class="main-title" style="font-size: 2.5rem;">Edit Book</h1>
-        <p class="subtitle">Making changes to "<%= @book.title %>"</p>
-      </div>
+    <div class="relative space-y-12">
+      <header class="space-y-4">
+        <div class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-3xl shadow-xl shadow-slate-200">✏️</div>
+        <h1 class="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          Refine Your <span class="text-gradient-animated">Selection</span>
+        </h1>
+        <p class="text-slate-500 text-lg font-medium leading-relaxed max-w-md">
+          Update the records for <span class="text-slate-900 font-bold italic">"<%= @book.title %>"</span> to keep your collection accurate.
+        </p>
+      </header>
 
       <%= render "form", book: @book %>
-      
-      <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
-        <%= link_to "← Back to Library", books_path, class: "auth-link" %>
-        <%= link_to "View this book", @book, class: "btn-edit", style: "text-decoration: none;" %>
-      </div>
     </div>
-
   </div>
 </div>
